@@ -12,6 +12,9 @@
         <body>
             <header>
             Bike Shop
+            {% if app.session.get('basket')%}
+                <a href="/basket">Basket</a>
+            {% endif %}
             </header>
             <main>
             {% block content %} {% endblock %}
