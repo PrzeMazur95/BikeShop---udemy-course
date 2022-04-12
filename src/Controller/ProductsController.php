@@ -32,6 +32,12 @@ class ProductsController extends AbstractController
     public function details($id, ProductRepository $repo): Response
     {
         $bike = $repo->find($id);
+
+        if ($bike === null){
+
+            throw $this->createNotFoundException('The product does not exist');
+
+        }
         return $this->render('details.html.twig',[
             'bike'=>$bike
         ]);
