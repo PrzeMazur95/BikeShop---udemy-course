@@ -39,7 +39,8 @@ class ProductsController extends AbstractController
 
         }
         return $this->render('details.html.twig',[
-            'bike'=>$bike
+            'bike'=>$bike,
+            'inBasket' =>false
         ]);
 
     }

@@ -13,8 +13,14 @@
     <div>
         {{ bike.name }}
         ${{ bike.price }}
+        <form method="POST">
+        {% if inBasket %}
+            <button disabled>Added to basket</button>
+        {% else %}
+            <button>Add to basket</button>
+        {% endif %}
+        </form>
     </div>
-
 </div>
 
  {% if bike.description %}{{ bike.description }}{% endif %}
