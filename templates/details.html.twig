@@ -1,0 +1,21 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<div class="breadcrumbs">
+    <a href=/>Homepage</a>
+</div>
+
+<h1>Details</h1>
+<div class="product-details">
+    <div>
+        {% if bike.image %}<img src="/images/{{ bike.image }}">{% endif %}
+    </div>
+    <div>
+        {{ bike.name }}
+        ${{ bike.price }}
+    </div>
+
+</div>
+
+ {% if bike.description %}{{ bike.description }}{% endif %}
+{% endblock %}
