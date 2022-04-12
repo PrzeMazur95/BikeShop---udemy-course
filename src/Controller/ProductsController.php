@@ -25,5 +25,17 @@ class ProductsController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/products/{id}")
+     */
+
+    public function details($id, ProductRepository $repo): Response
+    {
+        $bike = $repo->find($id);
+        return $this->render('details.html.twig',[
+            'bike'=>$bike
+        ]);
+
+    }
 
 }
