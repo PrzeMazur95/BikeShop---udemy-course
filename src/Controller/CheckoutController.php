@@ -54,6 +54,8 @@ class CheckoutController extends AbstractController
                 $entityManager->persist($order);
                 $entityManager->flush();
 
+                $session->set('basket', []);
+
                 return $this->render('confirmation.html.twig');
 
 
